@@ -2,12 +2,12 @@
   {
     "id": 1,
     "title": "Learn Angular",
-    "completed": false
+    "completed": true
   },
   {
     "id": 2,
     "title": "Learn React",
-    "completed": false
+    "completed": true
   },
   {
     "id": 3,
@@ -18,5 +18,25 @@
     "title": "Learning API Creation",
     "id": 4,
     "completed": true
+  },
+  {
+    "id": 5,
+    "title": "New Todo From Client",
+    "completed": false
+  },
+  {
+    "title": "Add Test",
+    "id": 6,
+    "completed": false
+  },
+  {
+    "title": "Add New Todo to check Auto refresh",
+    "id": 7,
+    "completed": false
+  },
+  {
+    "title": "Todo Task",
+    "id": 8,
+    "completed": false
   }
 ]
