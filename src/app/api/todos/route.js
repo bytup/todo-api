@@ -17,7 +17,12 @@ export async function POST(request) {
   );
   const todos = JSON.parse(file);
   const newTodo = await request.json();
+  if (!newTodo.title) {
+    return Response.json({ message: "Title is required", status: false });
+  }
+
   newTodo.id = todos.length + 1;
+  newTodo.completed = false;
   todos.push(newTodo);
   await fs.writeFile(
     process.cwd() + "/src/app/api/todos/todos.json",

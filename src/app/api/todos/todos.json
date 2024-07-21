@@ -1,17 +1,22 @@
 [
-    {
+  {
     "id": 1,
     "title": "Learn Angular",
     "completed": false
-},
-{
+  },
+  {
     "id": 2,
     "title": "Learn React",
     "completed": false
-},
-{
+  },
+  {
     "id": 3,
     "title": "Learn Vue",
     "completed": false
-}
+  },
+  {
+    "title": "Learning API Creation",
+    "id": 4,
+    "completed": true
+  }
 ]
