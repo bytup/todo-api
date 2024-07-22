@@ -7,7 +7,31 @@ export async function GET(request) {
     "utf8"
   );
   const users = JSON.parse(file);
-  return Response.json({ message: "Hello World", status: true, data: users });
+
+  const { searchParams } = new URL(request.url);
+
+  const page = parseInt(searchParams.get("page")) || 1;
+  const limit = parseInt(searchParams.get("limit")) || 5;
+  const startIndex = (page - 1) * limit;
+  const endIndex = page * limit;
+
+  // Search by name
+  const name = searchParams.get("name");
+  let filteredUsers = users;
+  if (name) {
+    filteredUsers = users.filter((user) =>
+      user.name.toLowerCase().includes(name.toLowerCase())
+    );
+  }
+
+  const paginatedUsers = filteredUsers.slice(startIndex, endIndex);
+
+  return Response.json({
+    message: "Hello World",
+    status: true,
+    data: paginatedUsers,
+    total: filteredUsers.length,
+  });
 }
 
 export async function POST(request) {
